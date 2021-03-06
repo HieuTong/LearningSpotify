@@ -28,6 +28,8 @@
 		42BD859025F2943300D1A9BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BD858F25F2943300D1A9BB /* HomeViewController.swift */; };
 		42BD859525F2943400D1A9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BD859425F2943400D1A9BB /* Assets.xcassets */; };
 		42BD859825F2943400D1A9BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BD859625F2943400D1A9BB /* LaunchScreen.storyboard */; };
+		E72F82E225F35293007BFE31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F82E125F35293007BFE31 /* Extensions.swift */; };
+		E72F82E525F39521007BFE31 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F82E425F39521007BFE31 /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		42BD859425F2943400D1A9BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42BD859725F2943400D1A9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42BD859925F2943400D1A9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E72F82E125F35293007BFE31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E72F82E425F39521007BFE31 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				4278E5BD25F2982F00923866 /* Playlist.swift */,
 				4278E5C025F2984500923866 /* AudioTrack.swift */,
 				4278E5C325F2985700923866 /* UserProfile.swift */,
+				E72F82E425F39521007BFE31 /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				42BD858B25F2943300D1A9BB /* AppDelegate.swift */,
 				42BD858D25F2943300D1A9BB /* SceneDelegate.swift */,
 				42BD859425F2943400D1A9BB /* Assets.xcassets */,
+				E72F82E125F35293007BFE31 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				4278E5BE25F2982F00923866 /* Playlist.swift in Sources */,
 				4278E5B525F297DB00923866 /* AuthManager.swift in Sources */,
 				4278E5B125F2977C00923866 /* SearchResultsViewController.swift in Sources */,
+				E72F82E525F39521007BFE31 /* AuthResponse.swift in Sources */,
 				4278E5A225F2970100923866 /* WelcomeViewController.swift in Sources */,
 				4278E5A825F2973E00923866 /* ProfileViewController.swift in Sources */,
 				4278E59125F2962D00923866 /* TabBarViewController.swift in Sources */,
@@ -260,6 +267,7 @@
 				42BD858C25F2943300D1A9BB /* AppDelegate.swift in Sources */,
 				4278E5AE25F2976600923866 /* PlaylistViewController.swift in Sources */,
 				4278E5C425F2985700923866 /* UserProfile.swift in Sources */,
+				E72F82E225F35293007BFE31 /* Extensions.swift in Sources */,
 				4278E59825F296A400923866 /* LibraryViewController.swift in Sources */,
 				4278E5AB25F2975400923866 /* PlayerViewController.swift in Sources */,
 				4278E5B825F297E800923866 /* APICaller.swift in Sources */,
