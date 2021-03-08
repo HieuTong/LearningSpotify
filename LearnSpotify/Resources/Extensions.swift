@@ -33,3 +33,35 @@ extension UIView {
         return top + height
     }
 }
+
+extension UIViewController {
+    func present(_ controller: UIViewController) {
+        DispatchQueue.main.async {
+            self.present(controller, animated: true)
+        }
+    }
+    
+    func push(_ controller: UIViewController) {
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    func pop() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func pop(_ controller: UIViewController) {
+        DispatchQueue.main.async {
+            self.navigationController?.popToViewController(controller, animated: true)
+        }
+    }
+    
+    func popToRoot() {
+        DispatchQueue.main.async {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+}

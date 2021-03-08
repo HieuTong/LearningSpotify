@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,11 +28,20 @@
 		42BD859025F2943300D1A9BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BD858F25F2943300D1A9BB /* HomeViewController.swift */; };
 		42BD859525F2943400D1A9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BD859425F2943400D1A9BB /* Assets.xcassets */; };
 		42BD859825F2943400D1A9BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BD859625F2943400D1A9BB /* LaunchScreen.storyboard */; };
+		C78A034FFE4A8300B2055C31 /* Pods_LearnSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0336A603F073DD46A6716CD6 /* Pods_LearnSpotify.framework */; };
 		E72F82E225F35293007BFE31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F82E125F35293007BFE31 /* Extensions.swift */; };
 		E72F82E525F39521007BFE31 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F82E425F39521007BFE31 /* AuthResponse.swift */; };
+		E7F8EC1425F4DFFE00C8E4FB /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8EC1325F4DFFE00C8E4FB /* SettingsModels.swift */; };
+		E7F8EC2825F5334400C8E4FB /* NewReleaseReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8EC2725F5334400C8E4FB /* NewReleaseReponse.swift */; };
+		E7F8EC2B25F5366D00C8E4FB /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8EC2A25F5366D00C8E4FB /* APIImage.swift */; };
+		E7F8EC2F25F5CA8C00C8E4FB /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8EC2E25F5CA8C00C8E4FB /* Artist.swift */; };
+		E7F8EC3225F5D0D700C8E4FB /* FeaturedPlaylistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8EC3125F5D0D700C8E4FB /* FeaturedPlaylistResponse.swift */; };
+		E7F8EC3525F604CF00C8E4FB /* RecommendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8EC3425F604CF00C8E4FB /* RecommendedGenresResponse.swift */; };
+		E7F8EC4C25F636D400C8E4FB /* RecommendationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8EC4B25F636D400C8E4FB /* RecommendationsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0336A603F073DD46A6716CD6 /* Pods_LearnSpotify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnSpotify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4278E59025F2962D00923866 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		4278E59425F2966500923866 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4278E59725F296A400923866 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +65,17 @@
 		42BD859425F2943400D1A9BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42BD859725F2943400D1A9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42BD859925F2943400D1A9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86F1D80185604438FD9B5B11 /* Pods-LearnSpotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSpotify.release.xcconfig"; path = "Target Support Files/Pods-LearnSpotify/Pods-LearnSpotify.release.xcconfig"; sourceTree = "<group>"; };
 		E72F82E125F35293007BFE31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E72F82E425F39521007BFE31 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		E7F8EC1325F4DFFE00C8E4FB /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
+		E7F8EC2725F5334400C8E4FB /* NewReleaseReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleaseReponse.swift; sourceTree = "<group>"; };
+		E7F8EC2A25F5366D00C8E4FB /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
+		E7F8EC2E25F5CA8C00C8E4FB /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		E7F8EC3125F5D0D700C8E4FB /* FeaturedPlaylistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistResponse.swift; sourceTree = "<group>"; };
+		E7F8EC3425F604CF00C8E4FB /* RecommendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedGenresResponse.swift; sourceTree = "<group>"; };
+		E7F8EC4B25F636D400C8E4FB /* RecommendationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsResponse.swift; sourceTree = "<group>"; };
+		F69C482CC0EC803238550FCA /* Pods-LearnSpotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSpotify.debug.xcconfig"; path = "Target Support Files/Pods-LearnSpotify/Pods-LearnSpotify.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +83,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C78A034FFE4A8300B2055C31 /* Pods_LearnSpotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3224A315FAA7373CE073BAED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F69C482CC0EC803238550FCA /* Pods-LearnSpotify.debug.xcconfig */,
+				86F1D80185604438FD9B5B11 /* Pods-LearnSpotify.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4278E59A25F296C400923866 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +139,8 @@
 			children = (
 				42BD858A25F2943300D1A9BB /* LearnSpotify */,
 				42BD858925F2943300D1A9BB /* Products */,
+				3224A315FAA7373CE073BAED /* Pods */,
+				D3042A402A1DA6E8CAA04B84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +182,13 @@
 				4278E5C025F2984500923866 /* AudioTrack.swift */,
 				4278E5C325F2985700923866 /* UserProfile.swift */,
 				E72F82E425F39521007BFE31 /* AuthResponse.swift */,
+				E7F8EC1325F4DFFE00C8E4FB /* SettingsModels.swift */,
+				E7F8EC2725F5334400C8E4FB /* NewReleaseReponse.swift */,
+				E7F8EC2A25F5366D00C8E4FB /* APIImage.swift */,
+				E7F8EC2E25F5CA8C00C8E4FB /* Artist.swift */,
+				E7F8EC3125F5D0D700C8E4FB /* FeaturedPlaylistResponse.swift */,
+				E7F8EC3425F604CF00C8E4FB /* RecommendedGenresResponse.swift */,
+				E7F8EC4B25F636D400C8E4FB /* RecommendationsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +219,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D3042A402A1DA6E8CAA04B84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0336A603F073DD46A6716CD6 /* Pods_LearnSpotify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -189,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42BD859C25F2943400D1A9BB /* Build configuration list for PBXNativeTarget "LearnSpotify" */;
 			buildPhases = (
+				FCBDC64CD0D66AA6EB684FDC /* [CP] Check Pods Manifest.lock */,
 				42BD858425F2943300D1A9BB /* Sources */,
 				42BD858525F2943300D1A9BB /* Frameworks */,
 				42BD858625F2943300D1A9BB /* Resources */,
+				11FC055DB7ABDBDDEE0D4551 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +293,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11FC055DB7ABDBDDEE0D4551 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearnSpotify/Pods-LearnSpotify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LearnSpotify/Pods-LearnSpotify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LearnSpotify/Pods-LearnSpotify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCBDC64CD0D66AA6EB684FDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearnSpotify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42BD858425F2943300D1A9BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -255,11 +344,14 @@
 				4278E5BE25F2982F00923866 /* Playlist.swift in Sources */,
 				4278E5B525F297DB00923866 /* AuthManager.swift in Sources */,
 				4278E5B125F2977C00923866 /* SearchResultsViewController.swift in Sources */,
+				E7F8EC3225F5D0D700C8E4FB /* FeaturedPlaylistResponse.swift in Sources */,
 				E72F82E525F39521007BFE31 /* AuthResponse.swift in Sources */,
 				4278E5A225F2970100923866 /* WelcomeViewController.swift in Sources */,
 				4278E5A825F2973E00923866 /* ProfileViewController.swift in Sources */,
 				4278E59125F2962D00923866 /* TabBarViewController.swift in Sources */,
+				E7F8EC1425F4DFFE00C8E4FB /* SettingsModels.swift in Sources */,
 				4278E5BB25F2981A00923866 /* HapticsManager.swift in Sources */,
+				E7F8EC4C25F636D400C8E4FB /* RecommendationsResponse.swift in Sources */,
 				4278E5C125F2984500923866 /* AudioTrack.swift in Sources */,
 				42BD859025F2943300D1A9BB /* HomeViewController.swift in Sources */,
 				4278E59E25F296F400923866 /* AuthViewController.swift in Sources */,
@@ -269,9 +361,13 @@
 				4278E5C425F2985700923866 /* UserProfile.swift in Sources */,
 				E72F82E225F35293007BFE31 /* Extensions.swift in Sources */,
 				4278E59825F296A400923866 /* LibraryViewController.swift in Sources */,
+				E7F8EC2825F5334400C8E4FB /* NewReleaseReponse.swift in Sources */,
+				E7F8EC2B25F5366D00C8E4FB /* APIImage.swift in Sources */,
 				4278E5AB25F2975400923866 /* PlayerViewController.swift in Sources */,
 				4278E5B825F297E800923866 /* APICaller.swift in Sources */,
+				E7F8EC2F25F5CA8C00C8E4FB /* Artist.swift in Sources */,
 				42BD858E25F2943300D1A9BB /* SceneDelegate.swift in Sources */,
+				E7F8EC3525F604CF00C8E4FB /* RecommendedGenresResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -395,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -407,6 +503,7 @@
 		};
 		42BD859D25F2943400D1A9BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F69C482CC0EC803238550FCA /* Pods-LearnSpotify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -425,6 +522,7 @@
 		};
 		42BD859E25F2943400D1A9BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F1D80185604438FD9B5B11 /* Pods-LearnSpotify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
