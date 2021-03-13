@@ -13,12 +13,12 @@ enum BrowseSectionType {
     case recommendedTracks(viewModels: [RecommendedTrackCellViewModel]) //3
 }
 
-class HomeViewController: UIViewController {
+class BrowseViewController: UIViewController {
     
     private var collectionView: UICollectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, _) -> NSCollectionLayoutSection? in
-            return HomeViewController.createSectionLayout(section: sectionIndex)
+            return BrowseViewController.createSectionLayout(section: sectionIndex)
         })
     )
 
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        title = "Browse"
         view.backgroundColor = .systemBackground
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(didTapSettings))
         configureCollectionView()
@@ -172,7 +172,7 @@ class HomeViewController: UIViewController {
         sections.append(.featurePlaylists(viewModels: playlists.compactMap({
             return FeaturedPlayListCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), creatorName: $0.owner.display_name)
         })))
-        sections.append(.recommendedTracks(viewModels: tracks.compactMap({ return RecommendedTrackCellViewModel(name: $0.name, artistName: $0.artists.first?.name ?? "-", artworkURL: URL(string: $0.album.images.first?.url ?? ""))})))
+        sections.append(.recommendedTracks(viewModels: tracks.compactMap({ return RecommendedTrackCellViewModel(name: $0.name, artistName: $0.artists.first?.name ?? "-", artworkURL: URL(string: $0.album?.images.first?.url ?? ""))})))
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
@@ -187,7 +187,7 @@ class HomeViewController: UIViewController {
     
 }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension BrowseViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let type = sections[section]
         switch type {
@@ -229,6 +229,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     static func createSectionLayout(section: Int) -> NSCollectionLayoutSection {
+        let supplementaryViews = [NSCollectionLayoutBoundarySupplementaryItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)]
         switch section {
         case 0:
             //item
@@ -245,6 +246,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             //section
             let section = NSCollectionLayoutSection(group: horizontalGroup)
             section.orthogonalScrollingBehavior = .groupPaging
+            section.boundarySupplementaryItems = supplementaryViews
             return section
         case 1:
             //item
@@ -261,6 +263,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             //section
             let section = NSCollectionLayoutSection(group: horizontalGroup)
             section.orthogonalScrollingBehavior = .continuous
+            section.boundarySupplementaryItems = supplementaryViews
             return section
         case 2:
             //item
@@ -274,6 +277,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             //section
             let section = NSCollectionLayoutSection(group: group)
+            section.boundarySupplementaryItems = supplementaryViews
             return section
         default:
             //item
@@ -287,6 +291,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
             //section
             let section = NSCollectionLayoutSection(group: group)
+            section.boundarySupplementaryItems = supplementaryViews
             return section
         }
     }
