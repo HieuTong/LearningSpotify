@@ -11,6 +11,17 @@ enum BrowseSectionType {
     case newRelease(viewModels: [NewReleasesCellViewModel]) //1
     case featurePlaylists(viewModels: [FeaturedPlayListCellViewModel]) //2
     case recommendedTracks(viewModels: [RecommendedTrackCellViewModel]) //3
+    
+    var title: String {
+        switch self {
+        case .newRelease:
+            return "New Released Albums"
+        case .featurePlaylists:
+            return "Featured Playlists"
+        case .recommendedTracks:
+            return "Recommended Tracks"
+        }
+    }
 }
 
 class BrowseViewController: UIViewController {
@@ -52,7 +63,7 @@ class BrowseViewController: UIViewController {
         collectionView.register(NewReleaseCollectionViewCell.self, forCellWithReuseIdentifier: NewReleaseCollectionViewCell.identifier)
         collectionView.register(FeaturedPlaylistCollectionViewCell.self, forCellWithReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier)
         collectionView.register(RecommendedTrackCollectionViewCell.self, forCellWithReuseIdentifier: RecommendedTrackCollectionViewCell.identifier)
-
+        collectionView.register(TitleHeaderCollectionResuableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderCollectionResuableView.identifier)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -183,6 +194,15 @@ class BrowseViewController: UIViewController {
         vc.title = "Settings"
         vc.navigationItem.largeTitleDisplayMode = .never
         push(vc)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleHeaderCollectionResuableView.identifier, for: indexPath) as? TitleHeaderCollectionResuableView, kind == UICollectionView.elementKindSectionHeader else {
+            return UICollectionReusableView()
+        }
+        let title = sections[indexPath.section].title
+        header.configure(with: title)
+        return header
     }
     
 }
