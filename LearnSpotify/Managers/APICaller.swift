@@ -184,8 +184,8 @@ final class APICaller {
     
     // MARK: - Category
     
-    public func getCategories(completion: @escaping (Result<String, Error>) -> Void) {
-        createRequest(with: URL(string: Constants.baseAPIURL + "/browse/categories?limit=2"), type: .GET) { (request) in
+    public func getCategories(completion: @escaping (Result<[Category], Error>) -> Void) {
+        createRequest(with: URL(string: Constants.baseAPIURL + "/browse/categories?limit=50"), type: .GET) { (request) in
             let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
                 guard let data = data,  error == nil else {
                     completion(.failure(APIError.failedToGetData))
@@ -193,8 +193,15 @@ final class APICaller {
                 }
                 
                 do {
+//                    let decoder = JSONDecoder()
+//                    let result = try decoder.decode(AllCategoriesResponse.self, from: data)
+//                    print(result.categories.items)
+//                    completion(.success(result.categories.items))
+                    
                     let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    print(json)
                 } catch {
+                    print(error)
                     completion(.failure(error))
                 }
             }
@@ -203,8 +210,8 @@ final class APICaller {
         }
     }
     
-    public func getCategoryPlaylists(completion: @escaping (Result<String, Error>) -> Void) {
-        createRequest(with: URL(string: Constants.baseAPIURL + "/browse/categories?limit=2"), type: .GET) { (request) in
+    public func getCategoryPlaylists(category: Category, completion: @escaping (Result<[Playlist], Error>) -> Void) {
+        createRequest(with: URL(string: Constants.baseAPIURL + "/browse/categories/\(category.id)?limit=2"), type: .GET) { (request) in
             let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
                 guard let data = data,  error == nil else {
                     completion(.failure(APIError.failedToGetData))

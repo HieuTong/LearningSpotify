@@ -41,6 +41,19 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .systemBackground
+        
+        APICaller.shared.getCategories { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                    case .success(let model):
+                        let first = model.first!
+                        APICaller.shared.getCategoryPlaylists(category: first) { (<#Result<[Playlist], Error>#>) in
+                            <#code#>
+                        }
+                    case .failure(let error): break
+                }
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
