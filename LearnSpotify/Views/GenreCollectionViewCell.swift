@@ -1,14 +1,15 @@
 //
-//  GenreCollectionViewCell.swift
+//  CategoryCollectionViewCell.swift
 //  LearnSpotify
 //
 //  Created by Le Tong Minh Hieu on 3/14/21.
 //
 
 import UIKit
+import SDWebImage
 
-class GenreCollectionViewCell: BaseCollectionCell {
-    static let identifier = "GenreCollectionViewCell"
+class CategoryCollectionViewCell: BaseCollectionCell {
+    static let identifier = "CategoryCollectionViewCell"
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -40,12 +41,13 @@ class GenreCollectionViewCell: BaseCollectionCell {
         super.layoutSubviews()
     
         label.frame = CGRect(x: 10, y: contentView.height / 2, width: contentView.width - 20, height: contentView.height / 2)
-        imageView.frame = CGRect(x: contentView.width / 2, y: 0, width: contentView.width / 2, height: contentView.height / 2)
+        imageView.frame = CGRect(x: contentView.width / 2, y: 10, width: contentView.width / 2, height: contentView.height / 2)
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         label.text = nil
+        imageView.image = UIImage(systemName: "music.quarternote.3", withConfiguration: UIImage.SymbolConfiguration(pointSize: 50, weight: .regular))
     }
     
     override func setupView() {
@@ -55,8 +57,9 @@ class GenreCollectionViewCell: BaseCollectionCell {
         contentView.addSubview(imageView)
     }
     
-    func configure(with title: String) {
-        label.text = title
+    func configure(with viewModel: CategoryCollectionViewCellViewModel) {
+        label.text = viewModel.title
+        imageView.sd_setImage(with: viewModel.artworkURL, completed: nil)
         contentView.backgroundColor = colors.randomElement()
     }
 }
