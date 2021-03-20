@@ -169,7 +169,8 @@ class BrowseViewController: UIViewController {
             vc.navigationItem.largeTitleDisplayMode = .never
             push(vc)
         case .recommendedTracks:
-            break
+            let track = tracks[indexPath.row]
+            PlaybackPresenter.shared.startPlayback(from: self, track: track)
         }
     }
     

@@ -5,6 +5,7 @@
 //  Created by Le Tong Minh Hieu on 3/5/21.
 //
 
+import SafariServices
 import UIKit
 
 class SearchViewController: UIViewController {
@@ -96,13 +97,18 @@ extension SearchViewController: SearchResultsViewControllerDelegate {
     func didTapResult(_ result: SearchResult) {
         switch result {
         case .artist(let model):
-            break
+            guard let url = URL(string: model.external_urls["spotify"] ?? "") else {
+                return
+            }
+            
+            let vc = SFSafariViewController(url: url)
+            present(vc)
         case .album(let model):
             let vc = AlbumViewController(album: model)
             vc.navigationItem.largeTitleDisplayMode = .never
             push(vc)
-        case .track(let model):
-            break
+        case .track(let track):
+            PlaybackPresenter.shared.startPlayback(from: self, track: track)
         case .playlist(let model):
             let vc = PlaylistViewController(playlist: model)
             vc.navigationItem.largeTitleDisplayMode = .never

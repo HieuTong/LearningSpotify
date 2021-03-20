@@ -42,7 +42,7 @@ class AlbumViewController: UIViewController {
     }
     
     private var viewModels = [AlbumCollectionViewCellViewModel]()
-
+    private var tracks = [AudioTrack]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,12 +56,13 @@ class AlbumViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        APICaller.shared.getAlbumDetails(for: album) { (result) in
+        APICaller.shared.getAlbumDetails(for: album) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
-                    self.viewModels = model.tracks.items.compactMap({ AlbumCollectionViewCellViewModel(name: $0.name, artistName: $0.artists.first?.name ?? "-")})
-                    self.collectionView.reloadData()
+                    self?.tracks = model.tracks.items
+                    self?.viewModels = model.tracks.items.compactMap({ AlbumCollectionViewCellViewModel(name: $0.name, artistName: $0.artists.first?.name ?? "-")})
+                    self?.collectionView.reloadData()
                 case .failure(let error):
                     print(error)
                 }
@@ -86,6 +87,9 @@ extension AlbumViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        var track = tracks[indexPath.row]
+        track.album = self.album
+        PlaybackPresenter.shared.startPlayback(from: self, track: track)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -102,6 +106,11 @@ extension AlbumViewController: UICollectionViewDataSource, UICollectionViewDeleg
 
 extension AlbumViewController: PlaylistHeaderCollectionReusableViewDelegate {
     func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
-        print("Play all")
+        let tracksWithAlbum: [AudioTrack] = tracks.compactMap({
+            var track = $0
+            track.album = self.album
+            return track
+        })
+        PlaybackPresenter.shared.startPlayback(from: self, tracks: tracksWithAlbum)
     }
 }
