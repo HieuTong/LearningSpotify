@@ -36,6 +36,9 @@
 		42BD859025F2943300D1A9BB /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BD858F25F2943300D1A9BB /* BrowseViewController.swift */; };
 		42BD859525F2943400D1A9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42BD859425F2943400D1A9BB /* Assets.xcassets */; };
 		42BD859825F2943400D1A9BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BD859625F2943400D1A9BB /* LaunchScreen.storyboard */; };
+		42C85DA92606F7A8008F5CA4 /* LibraryPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C85DA82606F7A8008F5CA4 /* LibraryPlaylistsResponse.swift */; };
+		42C85DAC2606F986008F5CA4 /* ActionLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C85DAB2606F986008F5CA4 /* ActionLabelView.swift */; };
+		42C85DAF2607A509008F5CA4 /* LibraryAlbumsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C85DAE2607A509008F5CA4 /* LibraryAlbumsResponse.swift */; };
 		C78A034FFE4A8300B2055C31 /* Pods_LearnSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0336A603F073DD46A6716CD6 /* Pods_LearnSpotify.framework */; };
 		E72F82E225F35293007BFE31 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F82E125F35293007BFE31 /* Extensions.swift */; };
 		E72F82E525F39521007BFE31 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F82E425F39521007BFE31 /* AuthResponse.swift */; };
@@ -102,6 +105,9 @@
 		42BD859425F2943400D1A9BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42BD859725F2943400D1A9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42BD859925F2943400D1A9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42C85DA82606F7A8008F5CA4 /* LibraryPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPlaylistsResponse.swift; sourceTree = "<group>"; };
+		42C85DAB2606F986008F5CA4 /* ActionLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionLabelView.swift; sourceTree = "<group>"; };
+		42C85DAE2607A509008F5CA4 /* LibraryAlbumsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbumsResponse.swift; sourceTree = "<group>"; };
 		86F1D80185604438FD9B5B11 /* Pods-LearnSpotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnSpotify.release.xcconfig"; path = "Target Support Files/Pods-LearnSpotify/Pods-LearnSpotify.release.xcconfig"; sourceTree = "<group>"; };
 		E72F82E125F35293007BFE31 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E72F82E425F39521007BFE31 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
@@ -257,6 +263,8 @@
 				E77E8E542603105000328464 /* SearchResultResponse.swift */,
 				E77E8E58260330A900328464 /* SearchResult.swift */,
 				E7C247B32605E30400B7DE53 /* SearchResultSubtitleTableViewCellViewModel.swift */,
+				42C85DA82606F7A8008F5CA4 /* LibraryPlaylistsResponse.swift */,
+				42C85DAE2607A509008F5CA4 /* LibraryAlbumsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 				4241707525FE6541009AC6C1 /* GenreCollectionViewCell.swift */,
 				E7C247B92605F72800B7DE53 /* PlayerControlsView.swift */,
 				E7C247C326065E1A00B7DE53 /* LibraryToggleView.swift */,
+				42C85DAB2606F986008F5CA4 /* ActionLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -459,7 +468,9 @@
 				4241706F25FE1C20009AC6C1 /* AlbumCollectionViewCellViewModel.swift in Sources */,
 				420DAF4625FD1C3600123F64 /* TitleHeaderCollectionResuableView.swift in Sources */,
 				E7E8B39125FA7AD40056D036 /* RecommendedTrackCellViewModel.swift in Sources */,
+				42C85DAC2606F986008F5CA4 /* ActionLabelView.swift in Sources */,
 				E7C247B02605E13900B7DE53 /* SearchResultSubtitleTableViewCell.swift in Sources */,
+				42C85DAF2607A509008F5CA4 /* LibraryAlbumsResponse.swift in Sources */,
 				E77E8E52260262C100328464 /* CategoryViewController.swift in Sources */,
 				42240D862601134C00FFF6DA /* AllCategoriesResponse.swift in Sources */,
 				4278E5B125F2977C00923866 /* SearchResultsViewController.swift in Sources */,
@@ -481,6 +492,7 @@
 				E7C247C426065E1A00B7DE53 /* LibraryToggleView.swift in Sources */,
 				E7C247AD2605B77500B7DE53 /* SeachResultDefaultTableViewCell.swift in Sources */,
 				E7C247C12606541C00B7DE53 /* LibraryAlbumsViewController.swift in Sources */,
+				42C85DA92606F7A8008F5CA4 /* LibraryPlaylistsResponse.swift in Sources */,
 				E7F8EC4C25F636D400C8E4FB /* RecommendationsResponse.swift in Sources */,
 				4241706C25FE191D009AC6C1 /* AlbumTrackCollectionViewCell.swift in Sources */,
 				4278E5C125F2984500923866 /* AudioTrack.swift in Sources */,
