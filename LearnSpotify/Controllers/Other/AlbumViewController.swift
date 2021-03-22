@@ -66,7 +66,10 @@ class AlbumViewController: UIViewController {
             guard let strongSelf = self else { return }
             APICaller.shared.saveAlbum(album: strongSelf.album) { (success) in
                 if success {
-                    NotificationCenter.default.publisher(for: .albumSavedNotification, object: nil)
+                    HapticsManager.shared.vibrate(for: .success)
+                    NotificationCenter.default.post(name: .albumSavedNotification, object: nil)
+                } else {
+                    HapticsManager.shared.vibrate(for: .error)
                 }
             }
         }))

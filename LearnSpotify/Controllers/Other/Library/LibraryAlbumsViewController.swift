@@ -20,7 +20,7 @@ class LibraryAlbumsViewController: UIViewController {
         return tableView
     }()
     
-    
+    private var observer: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,13 @@ class LibraryAlbumsViewController: UIViewController {
         tableView.dataSource = self
         setUpNoAlbumsView()
         fetchData()
+        observer = NotificationCenter.default.addObserver(
+            forName: .albumSavedNotification,
+            object: nil,
+            queue: .main,
+            using: { [weak self] (_) in
+                self?.fetchData()
+            })
     }
     
     @objc func didTapClose() {
@@ -62,6 +69,7 @@ class LibraryAlbumsViewController: UIViewController {
     }
     
     private func fetchData() {
+        albums.removeAll()
         APICaller.shared.getCurrentUsersAlbums { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -101,6 +109,7 @@ extension LibraryAlbumsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        HapticsManager.shared.vibrateForSelection()
         let album = albums[indexPath.row]
         let vc = AlbumViewController(album: album)
         vc.navigationItem.largeTitleDisplayMode = .never
